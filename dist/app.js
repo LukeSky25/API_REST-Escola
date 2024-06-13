@@ -15,20 +15,20 @@ var _tokenRoutes = require('./routes/tokenRoutes'); var _tokenRoutes2 = _interop
 var _alunoRoutes = require('./routes/alunoRoutes'); var _alunoRoutes2 = _interopRequireDefault(_alunoRoutes);
 var _fotoRoutes = require('./routes/fotoRoutes'); var _fotoRoutes2 = _interopRequireDefault(_fotoRoutes);
 
-// const whiteList = [
-//   'http://192.168.0.105:3002',
-//   'http://localhost:3000'
-// ];
+ const whiteList = [
+   'http://192.168.0.105:3002',
+   'http://localhost:3000'
+ ];
 
-// const corsOptions = {
-//   origin: function (origin, callback) {
-//     if(whiteList.indexOf(origin) !== -1 || !origin) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error('Not allowedby CORS'));
-//     }
-//   }
-// };
+ const corsOptions = {
+   origin: function (origin, callback) {
+     if(whiteList.indexOf(origin) !== -1 || !origin) {
+       callback(null, true);
+     } else {
+       callback(new Error('Not allowedby CORS'));
+     }
+   }
+};
 
 class App {
   constructor() {
@@ -40,7 +40,7 @@ class App {
 
   middlewares() {
 
-    this.app.use(_cors2.default.call(void 0, ));
+    this.app.use(_cors2.default.call(void 0, corsOptions));
     this.app.use(_helmet2.default.call(void 0, ));
     this.app.use(_express2.default.urlencoded({ extended: true }));
     this.app.use(_express2.default.json());
