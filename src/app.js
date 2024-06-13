@@ -16,13 +16,13 @@ import alunoRoutes from './routes/alunoRoutes';
 import fotoRoutes from './routes/fotoRoutes';
 
 const whiteList = [
-  'http://192.168.0.105:3001',
+  'http://192.168.0.105:3002',
   'http://localhost:3001'
 ];
 
 const corsOptions = {
-  origin: function (origin,callback) {
-    if(whiteList.indexOf(origin) !== -1 || origin) {
+  origin: function (origin, callback) {
+    if(whiteList.indexOf(origin) !== -1 || !origin) {
       callback(null, true);
     } else {
       callback(new Error('Not allowedby CORS'));
