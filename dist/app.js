@@ -16,7 +16,7 @@ var _alunoRoutes = require('./routes/alunoRoutes'); var _alunoRoutes2 = _interop
 var _fotoRoutes = require('./routes/fotoRoutes'); var _fotoRoutes2 = _interopRequireDefault(_fotoRoutes);
 
  const whiteList = [
-   'http://192.168.0.105:3002',
+   'http://192.168.56.103:3002',
    'http://localhost:3000'
  ];
 
@@ -25,7 +25,7 @@ var _fotoRoutes = require('./routes/fotoRoutes'); var _fotoRoutes2 = _interopReq
      if(whiteList.indexOf(origin) !== -1 || !origin) {
        callback(null, true);
      } else {
-       callback(new Error('Not allowedby CORS'));
+       callback(new Error('Not allowed by CORS'));
      }
    }
 };

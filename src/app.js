@@ -16,7 +16,7 @@ import alunoRoutes from './routes/alunoRoutes';
 import fotoRoutes from './routes/fotoRoutes';
 
  const whiteList = [
-   'http://192.168.0.105:3002',
+   'http://192.168.56.103:3002',
    'http://localhost:3000'
  ];
 
@@ -25,7 +25,7 @@ import fotoRoutes from './routes/fotoRoutes';
      if(whiteList.indexOf(origin) !== -1 || !origin) {
        callback(null, true);
      } else {
-       callback(new Error('Not allowedby CORS'));
+       callback(new Error('Not allowed by CORS'));
      }
    }
 };
